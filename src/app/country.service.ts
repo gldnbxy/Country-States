@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Country } from './country';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 const httpOptions = {
   header: new HttpHeaders({ 'Content-Type': 'application/json'})

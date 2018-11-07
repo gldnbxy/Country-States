@@ -1,5 +1,13 @@
-<select class="country-selector">
-  <option *ngFor="let country of countries" value=0>
-    {{ country.name }}
+<select [(ngModel)]="selectedCountry" (ngModelChange)="onChange(country)">
+
+  <option value="" disabled>
+    Select a Country
   </option>
+
+  <option *ngFor="let country of countries" [ngValue]="country">
+    {{country.name}}
+  </option>
+
 </select>
+
+<app-states [country]="selectedCountry"></app-states>
