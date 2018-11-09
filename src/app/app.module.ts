@@ -17,7 +17,8 @@ import { StatesComponent } from './states/states.component';
     BrowserModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
