@@ -7,21 +7,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 
-export class StateService {
-  //The Country Code
-  cCode: string;
+export class StateService { 
   //The generic state url
   sUrl: string;
 
-  //Setter for country code
-  setcCode(cc: string)
-  {
-    this.cCode = cc;
-    this.sUrl = `https://xc-ajax-demo.herokuapp.com/api/countries/${this.cCode}/states/`
-  }
-
   //Getter for states for given country
-  getStates(): Observable<State[]>
+  getStates(cCode: string): Observable<State[]>
   {
     return this.http.get<State[]>(this.sUrl);    
   }

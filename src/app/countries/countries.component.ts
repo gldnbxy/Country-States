@@ -11,17 +11,12 @@ import { CountryService } from '../country.service';
 export class CountriesComponent implements OnInit {
 
   countries: Country[];
-  selectedCountry: Country;
-
-  onChange(country): void {
-    this.selectedCountry = country;
-  }
-
 
   constructor( private countryService: CountryService ) { }
 
   getCountries(): void {
     this.countryService.getCountries().subscribe(countries => this.countries = countries);
+    console.log("got countries");
   }
 
   ngOnInit() {

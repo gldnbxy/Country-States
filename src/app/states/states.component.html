@@ -2,5 +2,5 @@
     <option value="" disabled>
         Select a State
     </option>
-    <option></option>
+    <option *ngFor="let state of states" value="state.id">{{state.name}}</option>
 </select>

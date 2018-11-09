@@ -11,20 +11,19 @@ import { StateService } from '../state.service';
 
 export class StatesComponent implements OnInit {
 
-  @Input() country: Country;
+  @Input() cCode: string;
 
   states: State[];
 
-  info = this.country.code;
-
   getStates(){
-    this.stateService.setcCode(this.info);
-    this.stateService.getStates().subscribe(states => this.states = states);
+    this.stateService.getStates(this.cCode).subscribe(states => this.states = states);
   }
 
   constructor(private stateService: StateService) { }
 
   ngOnInit() {
+    this.getStates();
+    console.log("got states");
   }
 
 }
