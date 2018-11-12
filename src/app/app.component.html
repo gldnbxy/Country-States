@@ -5,4 +5,7 @@
   </h1>
 
   <app-countries></app-countries>
+  <div *ngIf="scCode">
+      <app-states [cCode]="scCode"></app-states>
+    </div>
 

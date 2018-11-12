@@ -14,6 +14,9 @@ export class StateService {
   //Getter for states for given country
   getStates(cCode: string): Observable<State[]>
   {
+    this.sUrl = `https://xc-ajax-demo.herokuapp.com/api/countries/${cCode}/states/`;
+    console.log(this.sUrl);
+    console.log("getting states in service");
     return this.http.get<State[]>(this.sUrl);    
   }
 
