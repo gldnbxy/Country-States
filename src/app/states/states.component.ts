@@ -23,8 +23,6 @@ export class StatesComponent implements OnInit {
 
   ngOnInit() {
     this.getStates();
-    console.log(this.cCode);
-    console.log("got states");
   }
 
 }
