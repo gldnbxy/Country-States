@@ -1,3 +1,18 @@
-<p>
-  add-country works!
-</p>
+<div>
+
+  <label>Country Name:
+    <input #countryName />
+  </label>
+
+  <label>Country ID: 
+    <input #countryId />
+  </label>
+
+  <label>Country Code: 
+    <input #countryCode />
+  </label>
+</div>
+
+<button (click)="add(countryId.value, countryCode.value, countryName.value);">
+ add
+</button>
