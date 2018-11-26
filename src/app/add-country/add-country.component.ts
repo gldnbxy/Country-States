@@ -9,14 +9,28 @@ import { CountryService } from '../country.service';
 })
 export class AddCountryComponent implements OnInit {
 
-  add(countryId: number, countryCode: string, countryName: string)
-  {
-    console.log(`ID: ${countryId}, Code: ${countryCode}, Name: ${countryName}`);
-  }
+  constructor(private countryService: CountryService) { }
 
-  constructor(private acountry: Country, countryService: CountryService) { }
+  acountry: Country;
+
+  add(countryName: string, countryCode: string)
+  {
+    let name = countryName.trim();
+    let code = countryCode.trim();
+
+    //console.log(`name: ${name}`);
+    //console.log(`code: ${code}`);
+
+    if(!countryName || !countryCode) { 
+      console.log("Error nothing in input");
+      return;
+    }
+
+    //console.log("sent to service");
+    this.countryService.addCountry({ name, code } as Country)
+      .subscribe(country => this.acountry = country);
+  }
 
   ngOnInit() {
   }
-
 }

@@ -1,11 +1,10 @@
+<h1>needsSpace.jpg</h1>
+
+
 <div>
 
   <label>Country Name:
     <input #countryName />
-  </label>
-
-  <label>Country ID: 
-    <input #countryId />
   </label>
 
   <label>Country Code: 
@@ -13,6 +12,6 @@
   </label>
 </div>
 
-<button (click)="add(countryId.value, countryCode.value, countryName.value);">
+<button (click)="add(countryName.value, countryCode.value);">
  add
 </button>

@@ -21,10 +21,10 @@ import { AddStateComponent } from './add-state/add-state.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule, 
-    ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

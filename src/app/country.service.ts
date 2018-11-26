@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { Country } from './country';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FormsModule } from '@angular/forms';
 
 const httpOptions = {
-  header: new HttpHeaders({ 'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 };
 
 @Injectable({
@@ -14,9 +13,6 @@ const httpOptions = {
 
 export class CountryService {
 
-  //a list of countries
-  private countries: Country[];
-
   //URL from whence countries shall be fetched
   private cUrl = 'https://xc-ajax-demo.herokuapp.com/api/countries/'
 
@@ -24,10 +20,13 @@ export class CountryService {
     return this.http.get<Country[]>(this.cUrl);
   }
 
-  addCountry(cid: number, cCode: string, cName: string): boolean
+  addCountry(country: Country): Observable<Country>
   {
-    this.http.get<Country[]>(this.cUrl).subscribe(countries => this.countries = countries);
-    return false;
+    //console.log("Recived in service");
+    //console.log(`country name: ${country.name}`);
+    //console.log(`country code: ${country.code}`)
+
+    return this.http.post<Country>(this.cUrl, country, httpOptions)
   }
 
   constructor(private http: HttpClient) { }
