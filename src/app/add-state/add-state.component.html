@@ -1,3 +1,20 @@
-<p>
-  add-state works!
-</p>
+<h1>needsMoreSpace.jpg</h1>
+
+<div>
+
+  <label>Country Code:
+    <input #countryCode />
+  </label>
+
+  <label>State Name: 
+    <input #stateName />
+  </label>
+
+  <label>State Code: 
+    <input #stateCode />
+  </label>
+</div>
+
+<button (click)="add(countryCode.value, stateName.value, stateCode);">
+ add
+</button>
